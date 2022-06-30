@@ -27,9 +27,9 @@ const Login = () => {
       localStorage.setItem('token',Math.random().toString(36).substring(2,9))
       navigate("/home");
     } else {
-      Swal.error({
+      Swal.fire({
         title: "Error",
-        text: "SPassword and Email are incorrect",
+        text: "Password and Email are incorrect",
       });
       navigate("/homepage");
     }

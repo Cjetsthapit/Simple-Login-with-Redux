@@ -13,11 +13,12 @@ function App() {
         <Route path="/">
           <Route index element={<Login />} />
           <Route path="register" element={<Register />} />
-         
         </Route>
-        <Route element={<PrivateRoutes />}>
-            <Route path="/home" element={<Homepage />} exact />
-          </Route>
+        <Route path="/home" element={<PrivateRoutes />}>
+          <Route index element={<Homepage />} exact />
+        </Route>
+
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Layout>
   );
